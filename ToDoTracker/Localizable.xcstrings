@@ -1,0 +1,216 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Add Group" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agregar grupo"
+          }
+        }
+      }
+    },
+    "Add Task" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agregar tarea"
+          }
+        }
+      }
+    },
+    "Buy groceries" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprar víveres"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
+    "Clean dishes" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lavar los platos"
+          }
+        }
+      }
+    },
+    "Do exams" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacer los exámenes"
+          }
+        }
+      }
+    },
+    "Do homework" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacer la tarea"
+          }
+        }
+      }
+    },
+    "E.g. Work, School ..." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ej. Trabajo, Escuela..."
+          }
+        }
+      }
+    },
+    "Group Name" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del grupo"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hogar"
+          }
+        }
+      }
+    },
+    "Mark complete" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como completada"
+          }
+        }
+      }
+    },
+    "Mark incomplete" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como pendiente"
+          }
+        }
+      }
+    },
+    "New Group" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo grupo"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        }
+      }
+    },
+    "School" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escuela"
+          }
+        }
+      }
+    },
+    "Select a Group" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona un grupo"
+          }
+        }
+      }
+    },
+    "Select Icon" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccionar ícono"
+          }
+        }
+      }
+    },
+    "Select icon" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccionar ícono"
+          }
+        }
+      }
+    },
+    "Selected icon" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ícono seleccionado"
+          }
+        }
+      }
+    },
+    "Task Title" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título de la tarea"
+          }
+        }
+      }
+    },
+    "ToDoTracker" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ToDoTracker"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

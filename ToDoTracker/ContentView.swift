@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
     @State private var taskGroups = TaskGroup.sampleData
     @State private var selectedGroup: TaskGroup?
     @State private var columnVisibility: NavigationSplitViewVisibility = .automatic
@@ -26,12 +28,22 @@ struct ContentView: View {
             }
             .navigationTitle("ToDoTracker")
             .listStyle(.sidebar)
-            .toolbar{
+            .navigationSplitViewColumnWidth(
+                min: 220,
+                ideal: horizontalSizeClass == .regular ? 300 : 240,
+                max: 360
+            )
+            .toolbar {
                 Button {
                     isShowingAddGroup = true
                 } label: {
-                    Image(systemName: "plus")
+                    if horizontalSizeClass == .regular {
+                        Label("Add Group", systemImage: "plus")
+                    } else {
+                        Image(systemName: "plus")
+                    }
                 }
+                .accessibilityLabel("Add Group")
             }
         } detail: {
             // COLUMN 2: DETAILS (selected group)
@@ -43,6 +55,7 @@ struct ContentView: View {
                 ContentUnavailableView("Select a Group", systemImage: "sidebar.left")
             }
         }
+        .navigationSplitViewStyle(.balanced)
         .sheet(isPresented: $isShowingAddGroup) {
             NewGroupView { newGroup in
                 taskGroups.append(newGroup)

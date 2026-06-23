@@ -14,29 +14,38 @@ struct TaskDetailView: View {
         List {
             ForEach($group.tasks) { $task in
                 HStack {
-                    Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
-                        .foregroundStyle(task.isCompleted ? .purple : .gray)
-                        .onTapGesture {
-                            withAnimation {
-                                task.isCompleted.toggle()
-                            }
+                    Button {
+                        withAnimation {
+                            task.isCompleted.toggle()
                         }
+                    } label: {
+                        Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
+                            .foregroundStyle(task.isCompleted ? .purple : .gray)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(
+                        task.isCompleted
+                            ? String(localized: "Mark incomplete")
+                            : String(localized: "Mark complete")
+                    )
                     
                     TextField("Task Title", text: $task.title)
                         .strikethrough(task.isCompleted)
                         .foregroundStyle(task.isCompleted ? .gray : .primary)
-                    }
+                }
             }
-        .onDelete { index in
-            group.tasks.remove(atOffsets: index)
-        }
+            .onDelete { index in
+                group.tasks.remove(atOffsets: index)
+            }
         }
         .navigationTitle(group.title)
         .toolbar {
-            Button("Add Task +") {
+            Button {
                 withAnimation {
                     group.tasks.append(TaskItem(title: ""))
                 }
+            } label: {
+                Label("Add Task", systemImage: "plus")
             }
         }
     }

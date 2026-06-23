@@ -22,13 +22,13 @@ struct TaskGroup: Identifiable, Hashable {
 
 extension TaskGroup {
     static let sampleData: [TaskGroup] = [
-        TaskGroup(title: "School", symbolName: "book.fill", tasks: [
-            TaskItem(title: "Do homework"),
-            TaskItem(title: "Do exams")
+        TaskGroup(title: String(localized: "School"), symbolName: "book.fill", tasks: [
+            TaskItem(title: String(localized: "Do homework")),
+            TaskItem(title: String(localized: "Do exams"))
         ]),
-        TaskGroup(title: "Home", symbolName: "house.fill", tasks: [
-            TaskItem(title: "Buy groceries", isCompleted: true),
-            TaskItem(title: "Clean dishes")
+        TaskGroup(title: String(localized: "Home"), symbolName: "house.fill", tasks: [
+            TaskItem(title: String(localized: "Buy groceries"), isCompleted: true),
+            TaskItem(title: String(localized: "Clean dishes"))
         ])
     ]
 }

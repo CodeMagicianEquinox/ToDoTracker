@@ -10,10 +10,19 @@ import Testing
 
 struct ToDoTrackerTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-        // Swift Testing Documentation
-        // https://developer.apple.com/documentation/testing
+    @Test func sampleDataContainsUsableGroups() {
+        let groups = TaskGroup.sampleData
+
+        #expect(!groups.isEmpty)
+        #expect(groups.allSatisfy { !$0.title.isEmpty })
+        #expect(groups.allSatisfy { !$0.symbolName.isEmpty })
+        #expect(groups.allSatisfy { !$0.tasks.isEmpty })
     }
 
+    @Test func newTaskDefaultsToIncomplete() {
+        let task = TaskItem(title: "Test task")
+
+        #expect(task.title == "Test task")
+        #expect(!task.isCompleted)
+    }
 }

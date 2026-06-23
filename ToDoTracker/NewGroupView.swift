@@ -24,14 +24,22 @@ struct NewGroupView: View {
                 Section("Select Icon") {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 40))]) {
                         ForEach(icons, id: \.self) { icon in
-                            Image(systemName: icon)
-                                .frame(width: 40, height: 40)
-                                .background(selectedIcon == icon ? Color.blue.opacity(0.2) : Color.clear)
-                                .foregroundStyle(selectedIcon == icon ? .blue : .gray)
-                                .clipShape(Circle())
-                                .onTapGesture {
-                                    selectedIcon = icon
-                                }
+                            Button {
+                                selectedIcon = icon
+                            } label: {
+                                Image(systemName: icon)
+                                    .frame(width: 44, height: 44)
+                                    .background(selectedIcon == icon ? Color.blue.opacity(0.2) : Color.clear)
+                                    .foregroundStyle(selectedIcon == icon ? .blue : .gray)
+                                    .clipShape(Circle())
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(
+                                selectedIcon == icon
+                                    ? String(localized: "Selected icon")
+                                    : String(localized: "Select icon")
+                            )
+                            .accessibilityValue(icon)
                         }
                     }
                 }
@@ -44,11 +52,12 @@ struct NewGroupView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        let newGroup = TaskGroup(title: groupName, symbolName: selectedIcon, tasks: [])
+                        let title = groupName.trimmingCharacters(in: .whitespacesAndNewlines)
+                        let newGroup = TaskGroup(title: title, symbolName: selectedIcon, tasks: [])
                         onSave(newGroup)
                         dismiss()
                     }
-                    .disabled(groupName.isEmpty)
+                    .disabled(groupName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
             }
         }
