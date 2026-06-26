@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct TaskItem: Identifiable, Hashable {
-    let id = UUID()
+struct TaskItem: Identifiable, Hashable, Codable {
+    var id = UUID()
     var title: String
     var isCompleted = false
 }
 
-struct TaskGroup: Identifiable, Hashable {
-    let id = UUID()
+struct TaskGroup: Identifiable, Hashable, Codable {
+    var id = UUID()
     var title: String
     var symbolName: String
     var tasks: [TaskItem]
@@ -23,8 +23,11 @@ struct TaskGroup: Identifiable, Hashable {
 extension TaskGroup {
     static let sampleData: [TaskGroup] = [
         TaskGroup(title: String(localized: "School"), symbolName: "book.fill", tasks: [
-            TaskItem(title: String(localized: "Do homework")),
-            TaskItem(title: String(localized: "Do exams"))
+            TaskItem(title: String(localized: "Do homework"), isCompleted: true),
+            TaskItem(title: String(localized: "Do exams"), isCompleted: true),
+            TaskItem(title: "", isCompleted: true),
+            TaskItem(title: "", isCompleted: true),
+            TaskItem(title: "")
         ]),
         TaskGroup(title: String(localized: "Home"), symbolName: "house.fill", tasks: [
             TaskItem(title: String(localized: "Buy groceries"), isCompleted: true),
