@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "locale-banner-fr.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

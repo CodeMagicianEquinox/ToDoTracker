@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <rect width="900" height="360" fill="#eff6ff"/>
+  <rect y="0" width="900" height="72" fill="#bfdbfe"/>
+  <rect y="288" width="900" height="72" fill="#f8fafc"/>
+  <circle cx="150" cy="180" r="82" fill="#2563eb"/>
+  <path d="M150 102 L170 155 L226 155 L181 189 L198 242 L150 210 L102 242 L119 189 L74 155 L130 155 Z" fill="#ffffff"/>
+  <text x="280" y="165" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="54" font-weight="700" fill="#172554">English</text>
+  <text x="282" y="218" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="30" fill="#1e40af">Regional task planning</text>
+</svg>

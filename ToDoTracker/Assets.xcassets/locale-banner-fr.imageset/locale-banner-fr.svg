@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <rect width="900" height="360" fill="#f8fafc"/>
+  <rect x="0" width="300" height="360" fill="#1d4ed8"/>
+  <rect x="300" width="300" height="360" fill="#ffffff"/>
+  <rect x="600" width="300" height="360" fill="#dc2626"/>
+  <circle cx="150" cy="180" r="82" fill="#ffffff" opacity="0.92"/>
+  <path d="M150 110 C126 137 114 162 114 185 C114 224 142 244 150 244 C158 244 186 224 186 185 C186 162 174 137 150 110 Z" fill="#1d4ed8"/>
+  <text x="280" y="165" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="54" font-weight="700" fill="#111827">Français</text>
+  <text x="282" y="218" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="30" fill="#374151">Organisation régionale</text>
+</svg>

@@ -5,16 +5,26 @@
 //  Created by Tim Terrance on 6/22/26.
 //
 
+import Combine
 import SwiftUI
 
 struct TaskDetailView: View {
     @Binding var group: TaskGroup
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(\.locale) private var locale
+    @AppStorage("appLanguage") private var appLanguage = AppLanguage.system.rawValue
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 52) {
                 VStack(alignment: .leading, spacing: 30) {
+                    LocaleResourceHeader(
+                        language: AppLanguage(rawValue: appLanguage) ?? .system,
+                        locale: locale
+                    ) {
+                        addTask()
+                    }
+
                     Text(group.title)
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -53,16 +63,116 @@ struct TaskDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
-                    withAnimation {
-                        group.tasks.append(TaskItem(title: ""))
-                    }
+                    addTask()
                 } label: {
                     Label("Add Task", systemImage: "plus")
                 }
             }
         }
     }
+
+    private func addTask() {
+        withAnimation {
+            group.tasks.append(TaskItem(title: ""))
+        }
+    }
     
+    private struct LocaleResourceHeader: View {
+        let language: AppLanguage
+        let locale: Locale
+        let addTask: () -> Void
+        @State private var currentDate = Date()
+
+        var body: some View {
+            VStack(alignment: .leading, spacing: 16) {
+                Image(language.resourceImageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 132)
+                    .frame(maxWidth: .infinity)
+                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .accessibilityLabel(Text("Localized background image"))
+
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Organize tasks for your region")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+
+                    Text("Dates, time, numbers, and visual resources update when the app language changes.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+
+                    LocaleFormatGrid(locale: locale, currentDate: currentDate)
+
+                    Button(action: addTask) {
+                        Label("Add a task now", systemImage: "plus.circle.fill")
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.purple)
+                }
+                .padding(16)
+                .background(Color(.secondarySystemBackground))
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+            }
+            .onReceive(Timer.publish(every: 60, on: .main, in: .common).autoconnect()) { value in
+                currentDate = value
+            }
+        }
+    }
+
+    private struct LocaleFormatGrid: View {
+        let locale: Locale
+        let currentDate: Date
+
+        var body: some View {
+            Grid(alignment: .leading, horizontalSpacing: 16, verticalSpacing: 8) {
+                GridRow {
+                    Text("Today")
+                        .fontWeight(.medium)
+                    Text(formattedDate)
+                }
+
+                GridRow {
+                    Text("Current time")
+                        .fontWeight(.medium)
+                    Text(formattedTime)
+                }
+
+                GridRow {
+                    Text("Example number")
+                        .fontWeight(.medium)
+                    Text(formattedNumber)
+                }
+            }
+            .font(.footnote)
+            .foregroundStyle(.secondary)
+        }
+
+        private var formattedDate: String {
+            let formatter = DateFormatter()
+            formatter.locale = locale
+            formatter.dateStyle = .full
+            formatter.timeStyle = .none
+            return formatter.string(from: currentDate)
+        }
+
+        private var formattedTime: String {
+            let formatter = DateFormatter()
+            formatter.locale = locale
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            return formatter.string(from: currentDate)
+        }
+
+        private var formattedNumber: String {
+            let formatter = NumberFormatter()
+            formatter.locale = locale
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 2
+            return formatter.string(from: 12345.67) ?? "12,345.67"
+        }
+    }
+
     private struct TaskRow: View {
         @Binding var task: TaskItem
         

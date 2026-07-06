@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ToDoTrackerApp: App {
+    @AppStorage("appLanguage") private var appLanguage = AppLanguage.system.rawValue
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.locale, AppLanguage(rawValue: appLanguage)?.locale ?? .autoupdatingCurrent)
         }
     }
 }
