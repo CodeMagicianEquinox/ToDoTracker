@@ -13,14 +13,23 @@ struct TaskDetailView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(\.locale) private var locale
     @AppStorage("appLanguage") private var appLanguage = AppLanguage.system.rawValue
+
+    private var language: AppLanguage {
+        AppLanguage(rawValue: appLanguage) ?? .system
+    }
+
+    private var theme: LocaleTheme {
+        language.theme
+    }
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 52) {
                 VStack(alignment: .leading, spacing: 30) {
                     LocaleResourceHeader(
-                        language: AppLanguage(rawValue: appLanguage) ?? .system,
-                        locale: locale
+                        language: language,
+                        locale: locale,
+                        theme: theme
                     ) {
                         addTask()
                     }
@@ -30,7 +39,11 @@ struct TaskDetailView: View {
                         .fontWeight(.bold)
                     Section{
                         if sizeClass == .regular {
-                            GroupStatsView(tasks: group.tasks)
+                            GroupStatsView(
+                                tasks: group.tasks,
+                                accent: theme.accent,
+                                secondaryAccent: theme.secondaryAccent
+                            )
                                 .listRowInsets(EdgeInsets())
                                 .listRowBackground(Color(.secondarySystemBackground))
                         }
@@ -38,7 +51,7 @@ struct TaskDetailView: View {
                     
                     VStack(spacing: 0) {
                         ForEach(group.tasks.indices, id: \.self) { index in
-                            TaskRow(task: $group.tasks[index])
+                            TaskRow(task: $group.tasks[index], accent: theme.accent)
                             
                             if index < group.tasks.count - 1 {
                                 Divider()
@@ -50,7 +63,7 @@ struct TaskDetailView: View {
                     .padding(.vertical, 8)
                     .background(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
-                    .shadow(color: .black.opacity(0.03), radius: 18, x: 0, y: 10)
+                    .shadow(color: theme.accent.opacity(0.08), radius: 18, x: 0, y: 10)
                 }
                 .padding(.horizontal, sizeClass == .regular ? 24 : 18)
                 .padding(.top, 50)
@@ -58,7 +71,7 @@ struct TaskDetailView: View {
                 .frame(maxWidth: sizeClass == .regular ? 690 : .infinity, alignment: .leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .background(Color(red: 0.96, green: 0.94, blue: 0.98))
+            .background(theme.pageBackground)
             .navigationTitle(group.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -68,6 +81,7 @@ struct TaskDetailView: View {
                     Label("Add Task", systemImage: "plus")
                 }
             }
+            .tint(theme.accent)
         }
     }
 
@@ -80,6 +94,7 @@ struct TaskDetailView: View {
     private struct LocaleResourceHeader: View {
         let language: AppLanguage
         let locale: Locale
+        let theme: LocaleTheme
         let addTask: () -> Void
         @State private var currentDate = Date()
 
@@ -92,11 +107,13 @@ struct TaskDetailView: View {
                     .frame(maxWidth: .infinity)
                     .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
                     .accessibilityLabel(Text("Localized background image"))
+                    .flipsForRightToLeftLayoutDirection(true)
 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Organize tasks for your region")
                         .font(.title3)
                         .fontWeight(.semibold)
+                        .foregroundStyle(theme.accent)
 
                     Text("Dates, time, numbers, and visual resources update when the app language changes.")
                         .font(.subheadline)
@@ -108,10 +125,10 @@ struct TaskDetailView: View {
                         Label("Add a task now", systemImage: "plus.circle.fill")
                     }
                     .buttonStyle(.borderedProminent)
-                    .tint(.purple)
+                    .tint(theme.accent)
                 }
                 .padding(16)
-                .background(Color(.secondarySystemBackground))
+                .background(theme.panelBackground)
                 .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             }
             .onReceive(Timer.publish(every: 60, on: .main, in: .common).autoconnect()) { value in
@@ -175,6 +192,7 @@ struct TaskDetailView: View {
 
     private struct TaskRow: View {
         @Binding var task: TaskItem
+        let accent: Color
         
         var body: some View {
             HStack(spacing: 10) {
@@ -185,7 +203,7 @@ struct TaskDetailView: View {
                 } label: {
                     Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
                         .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(task.isCompleted ? .purple : .gray)
+                        .foregroundStyle(task.isCompleted ? accent : .gray)
                         .frame(width: 18, height: 18)
                 }
                 .buttonStyle(.plain)
@@ -200,6 +218,7 @@ struct TaskDetailView: View {
                     .strikethrough(task.isCompleted)
                     .foregroundStyle(task.isCompleted ? .gray : .primary)
                     .textFieldStyle(.plain)
+                    .multilineTextAlignment(.leading)
             }
             .frame(height: 47)
         }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <rect width="900" height="360" fill="#f6f1df"/>
+  <rect y="0" width="900" height="72" fill="#0f5132"/>
+  <rect y="288" width="900" height="72" fill="#c9a227"/>
+  <path d="M0 72 H900 V288 H0 Z" fill="#fbf7ea"/>
+  <path d="M690 82 L818 180 L690 278 L562 180 Z" fill="#0f5132" opacity="0.18"/>
+  <path d="M744 92 L858 180 L744 268 L630 180 Z" fill="#c9a227" opacity="0.28"/>
+  <circle cx="735" cy="180" r="80" fill="#0f5132"/>
+  <path d="M735 110 A70 70 0 1 0 735 250 A52 52 0 1 1 735 110 Z" fill="#f6f1df"/>
+  <circle cx="770" cy="154" r="9" fill="#f6f1df"/>
+  <text x="520" y="168" direction="rtl" text-anchor="end" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="56" font-weight="700" fill="#0b3b2a">العربية</text>
+  <text x="520" y="220" direction="rtl" text-anchor="end" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="30" fill="#7a5c12">تنظيم المهام حسب المنطقة</text>
+</svg>

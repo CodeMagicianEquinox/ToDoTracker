@@ -19,6 +19,7 @@ struct NewGroupView: View {
                 //SECTION 1: Name
                 Section("Group Name") {
                     TextField("E.g. Work, School ...", text: $groupName)
+                        .multilineTextAlignment(.leading)
                 }
                 //SECTION 2: Icon Picker
                 Section("Select Icon") {

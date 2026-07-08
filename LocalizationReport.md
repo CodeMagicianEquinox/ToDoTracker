@@ -31,3 +31,29 @@ Each formatter receives the active `Locale`, so switching the in-app language ch
 Verification:
 
 `xcodebuild -scheme ToDoTracker -project ToDoTracker.xcodeproj -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO build` succeeds. A Simulator-targeted build was also attempted, but the local CoreSimulator service reported that `simdiskimaged` was not responding, so the generic iOS build was used for verification.
+
+## Assignment 3 RTL Update
+
+Class transcript notes:
+
+The Assignment 3 recording says the ToDoTracker app should add a right-to-left language such as Arabic or Hebrew, confirm that the whole interface flips correctly, fix any clipped long titles, and review iconography, typography, and cultural styling. The written assignment also asks for RTL layout support, cultural UI customization, and a locale-specific visual theme or asset catalog resource.
+
+Task 1: right-to-left layouts
+
+Arabic is now available in the in-app language menu. `ToDoTrackerApp` applies both the selected `Locale` and the selected `LayoutDirection`, so choosing Arabic changes the app to right-to-left without requiring the user to change the whole simulator/device language. The app continues to use semantic `leading` and `trailing` alignment, so the sidebar, labels, text fields, buttons, dividers, and toolbar items mirror naturally.
+
+Task 2: cultural customization
+
+The add-group sheet uses semantic cancellation and confirmation toolbar placements, so Cancel and Save appear in the correct platform order for both LTR and RTL layouts. Text fields use leading text alignment, which becomes right alignment in Arabic. The task rows and progress panel now inherit locale-aware accent colors, and the interface avoids fixed left/right positioning so labels and controls can mirror.
+
+Task 3: locale-specific theme and assets
+
+The app now includes an Arabic-specific asset catalog image set:
+
+- `locale-banner-ar`
+
+Arabic uses a green and gold regional theme, an Arabic banner, Arabic sample task/group names, Arabic strings for all existing user-facing copy, Arabic date/time/number formatting through `ar_SA`, and RTL layout direction. Existing English, Spanish, and French locale assets and formatting still work.
+
+Verification:
+
+`xcodebuild -scheme ToDoTracker -project ToDoTracker.xcodeproj -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO build` succeeds after the Arabic RTL changes.

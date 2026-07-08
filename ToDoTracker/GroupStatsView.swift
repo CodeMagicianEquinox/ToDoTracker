@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GroupStatsView: View {
     var tasks: [TaskItem]
+    var accent: Color = .cyan
+    var secondaryAccent: Color = .brown
     
     // calculation of completion tasks
     var completedCount: Int {tasks.filter { $0.isCompleted}.count}
@@ -28,13 +30,13 @@ struct GroupStatsView: View {
             if showsProgressCircle {
                 ZStack {
                     Circle()
-                        .stroke(Color.cyan.opacity(0.18), lineWidth: 10)
+                        .stroke(accent.opacity(0.18), lineWidth: 10)
                     
                     // Completed Circle
                     Circle()
                         .trim(from: 0.0, to: progress)
                         .stroke(style: StrokeStyle(lineWidth: 10, lineCap: .round))
-                        .foregroundStyle(.cyan)
+                        .foregroundStyle(accent)
                         .rotationEffect(.degrees(-90))
                         
                     Text("\(Int((progress * 100).rounded()))%")
@@ -48,7 +50,7 @@ struct GroupStatsView: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text("Progress of my tasks")
                     .font(.headline)
-                    .foregroundStyle(.brown)
+                    .foregroundStyle(secondaryAccent)
                 Text("\(completedCount) / \(tasks.count) completed")
                     .font(.title2)
                     .bold()

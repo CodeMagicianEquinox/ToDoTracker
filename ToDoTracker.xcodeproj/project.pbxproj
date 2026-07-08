@@ -193,6 +193,7 @@
 				en,
 				es,
 				fr,
+				ar,
 				Base,
 			);
 			mainGroup = D002648C2FEA13E600686F28;

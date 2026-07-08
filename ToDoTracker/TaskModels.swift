@@ -54,7 +54,8 @@ extension TaskGroup {
     static func isDefaultSampleData(_ groups: [TaskGroup]) -> Bool {
         matchesSampleData(groups, locale: Locale(identifier: "en_US")) ||
         matchesSampleData(groups, locale: Locale(identifier: "es_ES")) ||
-        matchesSampleData(groups, locale: Locale(identifier: "fr_FR"))
+        matchesSampleData(groups, locale: Locale(identifier: "fr_FR")) ||
+        matchesSampleData(groups, locale: Locale(identifier: "ar_SA"))
     }
 
     private static func matchesSampleData(_ groups: [TaskGroup], locale: Locale) -> Bool {

@@ -22,6 +22,12 @@
             "state": "translated",
             "value": "%1$lld / %2$lld terminées"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld / %2$lld مكتملة"
+          }
         }
       }
     },
@@ -46,6 +52,12 @@
             "state": "translated",
             "value": "%lld %%"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld٪"
+          }
         }
       }
     },
@@ -67,6 +79,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajouter un groupe"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة مجموعة"
           }
         }
       }
@@ -90,6 +108,12 @@
             "state": "translated",
             "value": "Ajouter une tâche"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة مهمة"
+          }
         }
       }
     },
@@ -111,6 +135,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Acheter des courses"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شراء المستلزمات"
           }
         }
       }
@@ -134,6 +164,12 @@
             "state": "translated",
             "value": "Annuler"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إلغاء"
+          }
         }
       }
     },
@@ -155,6 +191,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Laver la vaisselle"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غسل الأطباق"
           }
         }
       }
@@ -178,6 +220,12 @@
             "state": "translated",
             "value": "Faire les examens"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أداء الاختبارات"
+          }
         }
       }
     },
@@ -199,6 +247,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Faire les devoirs"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إنجاز الواجبات"
           }
         }
       }
@@ -222,6 +276,12 @@
             "state": "translated",
             "value": "Anglais"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإنجليزية"
+          }
         }
       }
     },
@@ -243,6 +303,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ex. Travail, École..."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مثلاً: العمل، المدرسة ..."
           }
         }
       }
@@ -266,6 +332,12 @@
             "state": "translated",
             "value": "Nom du groupe"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اسم المجموعة"
+          }
         }
       }
     },
@@ -287,6 +359,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Maison"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المنزل"
           }
         }
       }
@@ -310,6 +388,12 @@
             "state": "translated",
             "value": "Langue"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اللغة"
+          }
         }
       }
     },
@@ -331,6 +415,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marquer comme terminée"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وضع علامة مكتملة"
           }
         }
       }
@@ -354,6 +444,12 @@
             "state": "translated",
             "value": "Marquer comme non terminée"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وضع علامة غير مكتملة"
+          }
         }
       }
     },
@@ -375,6 +471,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nouveau groupe"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مجموعة جديدة"
           }
         }
       }
@@ -400,6 +502,12 @@
             "state": "translated",
             "value": "Progression de mes tâches"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تقدم مهامي"
+          }
         }
       }
     },
@@ -421,6 +529,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enregistrer"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حفظ"
           }
         }
       }
@@ -444,6 +558,12 @@
             "state": "translated",
             "value": "École"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المدرسة"
+          }
         }
       }
     },
@@ -465,6 +585,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sélectionnez un groupe"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختر مجموعة"
           }
         }
       }
@@ -488,6 +614,12 @@
             "state": "translated",
             "value": "Sélectionner une icône"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختيار أيقونة"
+          }
         }
       }
     },
@@ -509,6 +641,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sélectionner une icône"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختيار الأيقونة"
           }
         }
       }
@@ -532,6 +670,12 @@
             "state": "translated",
             "value": "Icône sélectionnée"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأيقونة المحددة"
+          }
         }
       }
     },
@@ -553,6 +697,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Espagnol"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإسبانية"
           }
         }
       }
@@ -576,6 +726,12 @@
             "state": "translated",
             "value": "Par défaut du système"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إعدادات النظام"
+          }
         }
       }
     },
@@ -598,6 +754,12 @@
             "state": "translated",
             "value": "Titre de la tâche"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عنوان المهمة"
+          }
         }
       }
     },
@@ -616,6 +778,12 @@
           }
         },
         "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ToDoTracker"
+          }
+        },
+        "ar": {
           "stringUnit": {
             "state": "translated",
             "value": "ToDoTracker"
@@ -642,6 +810,12 @@
             "state": "translated",
             "value": "Ajouter une tâche"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أضف مهمة الآن"
+          }
         }
       }
     },
@@ -663,6 +837,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Heure actuelle"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الوقت الحالي"
           }
         }
       }
@@ -686,6 +866,12 @@
             "state": "translated",
             "value": "Les dates, l’heure, les nombres et les ressources visuelles changent avec la langue de l’app."
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تتغير التواريخ والوقت والأرقام والموارد المرئية عند تغيير لغة التطبيق."
+          }
         }
       }
     },
@@ -707,6 +893,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nombre exemple"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "رقم توضيحي"
           }
         }
       }
@@ -730,6 +922,12 @@
             "state": "translated",
             "value": "Français"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الفرنسية"
+          }
         }
       }
     },
@@ -751,6 +949,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Image de fond localisée"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صورة خلفية محلية"
           }
         }
       }
@@ -774,6 +978,12 @@
             "state": "translated",
             "value": "Organisez les tâches pour votre région"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نظّم المهام حسب منطقتك"
+          }
         }
       }
     },
@@ -795,6 +1005,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aujourd’hui"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اليوم"
+          }
+        }
+      }
+    },
+    "Arabic": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Arabic"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Árabe"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arabe"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "العربية"
           }
         }
       }

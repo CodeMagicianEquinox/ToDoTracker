@@ -13,8 +13,11 @@ struct ToDoTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
+            let language = AppLanguage(rawValue: appLanguage) ?? .system
+
             ContentView()
-                .environment(\.locale, AppLanguage(rawValue: appLanguage)?.locale ?? .autoupdatingCurrent)
+                .environment(\.locale, language.locale)
+                .environment(\.layoutDirection, language.layoutDirection)
         }
     }
 }
